@@ -6,9 +6,10 @@ export const Header = (props) => {
 
   const handleAuth = () => {
     auth.signInWithPopup(provider).then((result) => {
-      console.log(result).catch((error) => {
-        alert(error.message)
+      console.log(result)
       })
+      .catch((error) => {
+        alert(error.message)
     })
   }
 
