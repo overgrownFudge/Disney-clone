@@ -1,52 +1,53 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux"; //dispatch lets us store stuff, selector allows to retrieve stuff from store
-import {useHistory} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
 
 export const Header = (props) => {
-
   const handleAuth = () => {
-    auth.signInWithPopup(provider).then((result) => {
-      console.log(result)
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
       })
       .catch((error) => {
-        alert(error.message)
-    })
-  }
+        alert(error.message);
+      });
+  };
 
   return (
     <Nav>
       <Logo>
-        <img src='/assets/logo.svg' alt='Disney+' />
+        <img src="/assets/logo.svg" alt="Disney+" />
       </Logo>
       <NavMenu>
-        <a href='/home'>
-          <img src='/assets/home-icon.svg' alt='Home' />
+        <a href="/home">
+          <img src="/assets/home-icon.svg" alt="Home" />
           <span>SEARCH</span>
         </a>
         <a>
-          <img src='/assets/search-icon.svg' alt='Search' />
+          <img src="/assets/search-icon.svg" alt="Search" />
           <span>HOME</span>
         </a>
         <a>
-          <img src='/assets/watchlist-icon.svg' alt='Watchlist' />
+          <img src="/assets/watchlist-icon.svg" alt="Watchlist" />
           <span>Watchlist</span>
         </a>
         <a>
-          <img src='/assets/original-icon.svg' alt='Original' />
+          <img src="/assets/original-icon.svg" alt="Original" />
           <span>Original</span>
         </a>
         <a>
-          <img src='/assets/movie-icon.svg' alt='Movies' />
+          <img src="/assets/movie-icon.svg" alt="Movies" />
           <span>Movies</span>
         </a>
         <a>
-          <img src='/assets/series-icon.svg' alt='Series' />
+          <img src="/assets/series-icon.svg" alt="Series" />
           <span>Series</span>
         </a>
       </NavMenu>
-      <Login onClick = {handleAuth}>Login</Login>
+      <Login onClick={handleAuth}>Login</Login>
     </Nav>
   );
 };
