@@ -3,8 +3,11 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux"; //dispatch lets us store stuff, selector allows to retrieve stuff from store
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
+import {selectUserName, selectUserPhoto, setUserLoginDetails} from "../features/user/userSlice"
 
 export const Header = (props) => {
+
+  
   const handleAuth = () => {
     auth
       .signInWithPopup(provider)
