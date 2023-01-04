@@ -23,7 +23,7 @@ export const Header = (props) => {
       });
   };
 
-    const setUSer = user => {
+    const setUser = user => {
       dispatch(
         setUserLoginDetails({
           name: user.name.displayName,
@@ -37,6 +37,8 @@ export const Header = (props) => {
       <Logo>
         <img src="/assets/logo.svg" alt="Disney+" />
       </Logo>
+      {!username  ? <Login onClick={handleAuth}>Login</Login> : 
+      <>
       <NavMenu>
         <a href="/home">
           <img src="/assets/home-icon.svg" alt="Home" />
@@ -63,7 +65,8 @@ export const Header = (props) => {
           <span>Series</span>
         </a>
       </NavMenu>
-      <Login onClick={handleAuth}>Login</Login>
+      <UserImg src = {userPhoto} alt={username} />
+      </>}
     </Nav>
   );
 };
