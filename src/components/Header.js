@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux"; //dispatch lets us store stuff, selector allows to retrieve stuff from store
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { auth, provider } from "../firebase";
 import {
   selectUserName,
@@ -11,7 +11,7 @@ import {
 
 export const Header = (props) => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history = useNavigate();
   const username = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
 
@@ -184,4 +184,8 @@ const Login = styled.a`
     cursor: pointer;
   }
 `;
+
+const UserImg = styled.div`
+
+`
 export default Header;
