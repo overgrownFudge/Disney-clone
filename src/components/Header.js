@@ -7,18 +7,31 @@ import {selectUserName, selectUserPhoto, setUserLoginDetails} from "../features/
 
 export const Header = (props) => {
 
-  
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const username = useSelector(selectUserName)
+  const userPhoto = useSelector(selectUserPhoto)
+
   const handleAuth = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
+        setUser(result.user);
       })
       .catch((error) => {
         alert(error.message);
       });
   };
 
+    const setUSer = user => {
+      dispatch(
+        setUserLoginDetails({
+          name: user.name.displayName,
+          email: user.email,
+          photo: user.photoURL
+        })
+      )
+    }
   return (
     <Nav>
       <Logo>
