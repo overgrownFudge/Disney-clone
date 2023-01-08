@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux"; //dispatch lets us store stuff, selector allows to retrieve stuff from store
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../firebase";
 import {
   selectUserName,
   selectUserPhoto,
   setUserLoginDetails,
 } from "../features/user/userSlice";
-
 
 export const Header = (props) => {
   const dispatch = useDispatch();
@@ -39,35 +38,35 @@ export const Header = (props) => {
   return (
     <Nav>
       <Logo>
-        <img src="/assets/logo.svg" alt="Disney+" />
+        <img src='/assets/logo.svg' alt='Disney+' />
       </Logo>
       {!username ? (
         <Login onClick={handleAuth}>Login</Login>
       ) : (
         <>
           <NavMenu>
-            <a href="/home">
-              <img src="/assets/home-icon.svg" alt="Home" />
+            <a href='/home'>
+              <img src='/assets/home-icon.svg' alt='Home' />
               <span>SEARCH</span>
             </a>
             <a>
-              <img src="/assets/search-icon.svg" alt="Search" />
+              <img src='/assets/search-icon.svg' alt='Search' />
               <span>HOME</span>
             </a>
             <a>
-              <img src="/assets/watchlist-icon.svg" alt="Watchlist" />
+              <img src='/assets/watchlist-icon.svg' alt='Watchlist' />
               <span>Watchlist</span>
             </a>
             <a>
-              <img src="/assets/original-icon.svg" alt="Original" />
+              <img src='/assets/original-icon.svg' alt='Original' />
               <span>Original</span>
             </a>
             <a>
-              <img src="/assets/movie-icon.svg" alt="Movies" />
+              <img src='/assets/movie-icon.svg' alt='Movies' />
               <span>Movies</span>
             </a>
             <a>
-              <img src="/assets/series-icon.svg" alt="Series" />
+              <img src='/assets/series-icon.svg' alt='Series' />
               <span>Series</span>
             </a>
           </NavMenu>
@@ -186,7 +185,5 @@ const Login = styled.a`
   }
 `;
 
-const UserImg = styled.div`
-
-`
+const UserImg = styled.div``;
 export default Header;
