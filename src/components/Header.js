@@ -9,11 +9,15 @@ import {
   setUserLoginDetails,
 } from "../features/user/userSlice";
 
+<<<<<<< Updated upstream
 export const Header = (props) => {
   const dispatch = useDispatch();
   const history = useNavigate();
   const username = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
+=======
+const Header = (props) => {
+>>>>>>> Stashed changes
 
   const handleAuth = () => {
     auth
